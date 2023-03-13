@@ -1,0 +1,31 @@
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <form [formGroup]="achievementForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Description</label>
+                    <input type="text" class="form-control" formControlName="desp" required>
+                    <i class="fa fa-pencil fa-lg fa-fw" aria-hidden="true"></i>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Year</label>
+                    <input type="text" class="form-control" formControlName="year" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Event</label>
+                    <input type="text" class="form-control" formControlName="event" required>
+                </div>
+
+                <div class="form-group">
+                    <button id="1" class="btn btn-primary btn-block" type="submit">Add Achievement</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

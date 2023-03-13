@@ -1,0 +1,28 @@
+<div class="container">
+    <div>
+        <h2 class="h2">All Contact Details</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th clas="text-center" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of Contacts; let i = index">
+                    <th scope="row">{{book._id}}</th>
+                    <td>{{book.name}}</td>
+                    <td>{{book.addr}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-primary mr-3" routerLink="/edit-contact/{{book._id}}">Edit</button>
+                        <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

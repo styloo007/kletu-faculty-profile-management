@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Faculty Timetable</H1>
+<TABLE class="myTimetable"> 
+  <THEAD>
+    <TR>
+      <TH></TH>
+      <TH>Monday</TH>
+      <TH>Tuesday</TH>
+      <TH>Wednesday</TH>
+      <TH>Thursday</TH>
+      <TH>Friday</TH>     
+    </TR>
+  </THEAD>
+  <TBODY>
+    <TR>
+      <TD>P1</TD>
+      <TD>      
+        <ul style="list-style-type: none;">
+          <li *ngFor="let book of Timetables; let i = index">{{book.name}}</li>
+        </ul>
+        <form [formGroup]="timetableForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <input type="text" formControlName="name" required>
+          </div>
+          <div class="form-group">
+            <button class="button" type="submit">Add</button>
+          </div>
+        </form>
+        <!-- <ul style="list-style-type: none;"><li *ngFor="let subj of subjs1">{{subj}}</li></ul>
+        <input #newSubj id="test1" (keyup.enter)="addSubj1(newSubj.value)" (blur)="addSubj1(newSubj.value); newSubj.value='' ">
+        <button class="button"type="button" id="btn" (click)="addSubj1(newSubj.value)">Add</button> -->
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>        
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs2">{{subj}}</li></ul>
+        <input #newSubj1 (keyup.enter)="addSubj2(newSubj1.value)" (blur)="addSubj2(newSubj1.value); newSubj1.value='' ">
+        <button class="button" type="button" (click)="addSubj2(newSubj1.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>        
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs3">{{subj}}</li></ul>
+        <input #newSubj2 (keyup.enter)="addSubj3(newSubj2.value)" (blur)="addSubj3(newSubj2.value); newSubj2.value='' ">
+        <button class="button" type="button" (click)="addSubj3(newSubj2.value)">Add</button>
+        
+
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>        
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs4">{{subj}}</li></ul>
+        <input #newSubj3 (keyup.enter)="addSubj4(newSubj3.value)" (blur)="addSubj4(newSubj3.value); newSubj3.value='' ">
+        <button class="button" type="button" (click)="addSubj4(newSubj3.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+       <TD>        
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs5">{{subj}}</li></ul>
+        <input #newSubj4 (keyup.enter)="addSubj5(newSubj4.value)" (blur)="addSubj5(newSubj4.value); newSubj4.value='' ">
+        <button class="button" type="button" (click)="addSubj5(newSubj4.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>     
+    </TR>
+    <TR>
+      <TD>P2</TD>
+      <TD>         
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs6">{{subj}}</li></ul>
+        <input #newSubj5 (keyup.enter)="addSubj6(newSubj5.value)" (blur)="addSubj6(newSubj5.value); newSubj5.value='' ">
+        <button class="button" type="button" (click)="addSubj6(newSubj5.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs7">{{subj}}</li></ul>
+        <input #newSubj6 (keyup.enter)="addSubj7(newSubj6.value)" (blur)="addSubj7(newSubj6.value); newSubj6.value='' ">
+        <button class="button" type="button" (click)="addSubj7(newSubj6.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs8">{{subj}}</li></ul>
+        <input #newSubj7 (keyup.enter)="addSubj8(newSubj7.value)" (blur)="addSubj8(newSubj7.value); newSubj7.value='' ">
+        <button class="button" type="button" (click)="addSubj8(newSubj7.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs9">{{subj}}</li></ul>
+        <input #newSubj8 (keyup.enter)="addSubj9(newSubj8.value)" (blur)="addSubj9(newSubj8.value); newSubj8.value='' ">
+        <button class="button" type="button" (click)="addSubj9(newSubj8.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs10">{{subj}}</li></ul>
+        <input #newSubj9 (keyup.enter)="addSubj10(newSubj9.value)" (blur)="addSubj10(newSubj9.value); newSubj9.value='' ">
+        <button class="button" type="button" (click)="addSubj10(newSubj9.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+    </TR>
+      <TR>
+      <TD colspan="6" class="break">Break</TD>
+      </TR>
+      <TR>
+      <TD>P3</TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs11">{{subj}}</li></ul>
+        <input #newSubj10 (keyup.enter)="addSubj11(newSubj10.value)" (blur)="addSubj11(newSubj10.value); newSubj10.value='' ">
+        <button class="button" type="button" (click)="addSubj11(newSubj10.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs12">{{subj}}</li></ul>
+        <input #newSubj11 (keyup.enter)="addSubj12(newSubj11.value)" (blur)="addSubj12(newSubj11.value); newSubj11.value='' ">
+        <button class="button" type="button" (click)="addSubj12(newSubj11.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs13">{{subj}}</li></ul>
+        <input #newSubj12 (keyup.enter)="addSubj13(newSubj12.value)" (blur)="addSubj13(newSubj12.value); newSubj12.value='' ">
+        <button class="button" type="button" (click)="addSubj13(newSubj12.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs14">{{subj}}</li></ul>
+        <input #newSubj13 (keyup.enter)="addSubj14(newSubj13.value)" (blur)="addSubj14(newSubj13.value); newSubj13.value='' ">
+        <button class="button" type="button" (click)="addSubj14(newSubj13.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs15">{{subj}}</li></ul>
+        <input #newSubj14 (keyup.enter)="addSubj15(newSubj14.value)" (blur)="addSubj15(newSubj14.value); newSubj14.value='' ">
+        <button class="button" type="button" (click)="addSubj15(newSubj14.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+    </TR>
+      <TR>
+      <TD colspan="6" class="lunch">Lunch</TD>
+    </TR>
+      <TR>
+      <TD>P4</TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs16">{{subj}}</li></ul>
+        <input #newSubj15 (keyup.enter)="addSubj16(newSubj15.value)" (blur)="addSubj16(newSubj15.value); newSubj15.value='' ">
+        <button class="button" type="button" (click)="addSubj16(newSubj15.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs17">{{subj}}</li></ul>
+        <input #newSubj16 (keyup.enter)="addSubj17(newSubj16.value)" (blur)="addSubj17(newSubj16.value); newSubj16.value='' ">
+        <button class="button" type="button" (click)="addSubj17(newSubj16.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs18">{{subj}}</li></ul>
+        <input #newSubj17 (keyup.enter)="addSubj18(newSubj17.value)" (blur)="addSubj18(newSubj17.value); newSubj17.value='' ">
+        <button class="button" type="button" (click)="addSubj18(newSubj17.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs19">{{subj}}</li></ul>
+        <input #newSubj18 (keyup.enter)="addSubj19(newSubj18.value)" (blur)="addSubj19(newSubj18.value); newSubj18.value='' ">
+        <button class="button" type="button" (click)="addSubj19(newSubj18.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs20">{{subj}}</li></ul>
+        <input #newSubj19 (keyup.enter)="addSubj20(newSubj19.value)" (blur)="addSubj20(newSubj19.value); newSubj19.value='' ">
+        <button class="button" type="button" (click)="addSubj20(newSubj19.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+    </TR>
+      <TR>
+      <TD>P5</TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs21">{{subj}}</li></ul>
+        <input #newSubj20 (keyup.enter)="addSubj21(newSubj20.value)" (blur)="addSubj21(newSubj20.value); newSubj20.value='' ">
+        <button class="button" type="button" (click)="addSubj21(newSubj20.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs22">{{subj}}</li></ul>
+        <input #newSubj21 (keyup.enter)="addSubj22(newSubj21.value)" (blur)="addSubj22(newSubj21.value); newSubj21.value='' ">
+        <button class="button" type="button" (click)="addSubj22(newSubj21.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs23">{{subj}}</li></ul>
+        <input #newSubj22 (keyup.enter)="addSubj23(newSubj22.value)" (blur)="addSubj23(newSubj22.value); newSubj22.value='' ">
+        <button class="button" type="button" (click)="addSubj23(newSubj22.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs24">{{subj}}</li></ul>
+        <input #newSubj23 (keyup.enter)="addSubj24(newSubj23.value)" (blur)="addSubj24(newSubj23.value); newSubj23.value='' ">
+        <button class="button" type="button" (click)="addSubj24(newSubj23.value)">Add</button>
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+      <TD>                
+        <ul style="list-style-type: none;"><li *ngFor="let subj of subjs25">{{subj}}</li></ul>
+        <input #newSubj24 (keyup.enter)="addSubj25(newSubj24.value)" (blur)="addSubj25(newSubj24.value); newSubj24.value='' ">
+        <button  class="button" type="button" (click)="addSubj25(newSubj24.value)">Add</button>
+
+        <!-- <button type="submit" (click)="c1()">add</button> -->
+      </TD>
+    </TR>
+   </TBODY>
+  </TABLE>
+    
+</body>
+</html>

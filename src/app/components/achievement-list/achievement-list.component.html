@@ -1,0 +1,32 @@
+
+
+<div class="container">
+    <div>
+        <h2 class="h2">All Achievements Details</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Desc.</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Event</th>
+                    <th clas="text-center" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of Achievements; let i = index">
+                    <th scope="row">{{book._id}}</th>
+                    <td>{{book.desp}}</td>
+                    <td>{{book.year}}</td>
+                    <td>{{book.event}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-primary mr-3" routerLink="/edit-achievement/{{book._id}}">Edit</button>
+                        <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
